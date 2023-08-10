@@ -1,0 +1,40 @@
+# Author: Noah Herrington, Ph.D.
+# Email: noah.herrington@mssm.edu
+
+# This README file explains how to use the useful scripts for AF2-based modeling of kinases
+# in alternative conformations.
+
+## This repository includes four scripts:
+
+## 1) AlphaFold2_advanced_modified.py
+## - Used to run AlphaFold2 predictions of a given kinase
+## - Outputs 5 models
+## - Initial stages of program running installs extra dependencies and required packages
+## - "is_training" set to "True" to enable model dropout
+## - Takes two arguments: 1. input fasta file and 2. desired output directory
+## - Dependencies: biopython 1.79, jax 0.4.1, tensorflow 2.11.0
+## - Usage: python3 AlphaFold2_advanced_modified.py input_fasta output_dir
+
+## 2) colabfold_alphafold.py
+## - Modified version of script from ColabFold repository
+## - Allows for output directory argument
+## - Dependencies installed by or before running AlphaFold2_advanced_modified.py
+## - Replace default script with this one
+
+## 3) AF2_kinase_families_stackedbarplot.py
+## - Used to classify models downloaded from the AlphaFold2 Protein Structure Database
+##   into their respective kinase families
+## - Must be used in conjunction with kinfam.csv and output from
+##   Kincore classifier (https://github.com/vivekmodi/Kincore-standalone) as a csv,
+##   titled "kinases_classified.csv"
+## - Dependencies: matplotlib 3.7.0, numpy 1.23.5, pandas 1.4.4, plotly 5.9.0
+## - Usage: python3 AF2_kinase_families_stackedbarplot.py
+
+## 4) Kincore_ConformationDistribution_Doughnutplot.py
+## - Used to generate a doughnut-shaped plot of distribution of AF2-predicted models
+## - by their conformation
+## - Outputs fractions of each conformation to the screen and plotly doughnut plot in browser
+## - Dependencies: matplotlib 3.7.0, numpy 1.23.5, pandas 1.4.4
+## - Usage python3 Kincore_ConformationDistribution_Doughnutplot.py
+
+
