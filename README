@@ -4,7 +4,7 @@
 # This README file explains how to use the useful scripts for AF2-based modeling of kinases
 # in alternative conformations.
 
-## This repository includes four scripts:
+## This repository includes five scripts:
 
 ## 1) AlphaFold2_advanced_modified.py
 ## - Used to run AlphaFold2 predictions of a given kinase
@@ -32,9 +32,17 @@
 
 ## 4) Kincore_ConformationDistribution_Doughnutplot.py
 ## - Used to generate a doughnut-shaped plot of distribution of AF2-predicted models
-## - by their conformation
+##   by their conformation
 ## - Outputs fractions of each conformation to the screen and plotly doughnut plot in browser
 ## - Dependencies: matplotlib 3.7.0, numpy 1.23.5, pandas 1.4.4
 ## - Usage python3 Kincore_ConformationDistribution_Doughnutplot.py
 
-
+## 5) MSA_models_Mobitz_plot.py
+## - Used to generate plot of models by pseudo-dihedral angles (proposed by Mobitz (2015)),
+##   which group kinase models by movement of their DFG motif
+## - Outputs a saved hi-res image of the plot
+## - Allows for input of a chosen MSA depth and projection (3D/2D), where 2D represents the Mobitz
+##   plot and 3D adds an additional dimension for RMSD with respect to a prototyical DFG-in structure
+## - Necessitates having downloaded the PDB structure 1ATP and renamed it
+##   "1ATP_cAMP-dep_prot_kinase_ATP_DFGin_Reference.pdb"
+## - Usage python3 MSA_models_Mobitz_plot.py
