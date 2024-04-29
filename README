@@ -35,7 +35,7 @@
 ##   by their conformation
 ## - Outputs fractions of each conformation to the screen and plotly doughnut plot in browser
 ## - Dependencies: matplotlib 3.7.0, numpy 1.23.5, pandas 1.4.4
-## - Usage python3 Kincore_ConformationDistribution_Doughnutplot.py
+## - Usage: python3 Kincore_ConformationDistribution_Doughnutplot.py
 
 ## 5) MSA_models_Mobitz_plot.py
 ## - Used to generate plot of models by pseudo-dihedral angles (proposed by Mobitz (2015)),
@@ -45,4 +45,14 @@
 ##   plot and 3D adds an additional dimension for RMSD with respect to a prototyical DFG-in structure
 ## - Necessitates having downloaded the PDB structure 1ATP and renamed it
 ##   "1ATP_cAMP-dep_prot_kinase_ATP_DFGin_Reference.pdb"
-## - Usage python3 MSA_models_Mobitz_plot.py
+## - Usage: python3 MSA_models_Mobitz_plot.py
+
+## 6) enrichment.py
+## - Used to generate enrichment plot of a series of docked models
+## - Allows input of colored curves by MSA Depth, pLDDT Score, or Conformation
+## 	- If coloring by pLDDT Score is desired, requires presence of CSVs containing
+##	  classification of all models at those depths (created with Kincore - Dunbrack Lab)
+## - Requires two positional arguments:
+##	a) Name of the kinase, for which plots are created
+##	b) Quality by which curves are colored (i.e., msa, plddt, conf)
+## - Usage: python3 enrichment.py {a} {b}
